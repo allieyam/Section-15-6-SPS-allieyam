@@ -1,0 +1,135 @@
+<!--  All HTML files begin with the following line: -->
+<!DOCTYPE html>
+<!-- This indicates that the rest of the lines that follow are to be interpreted as HTML. It tells the browser about what document type to expect. -->
+
+<!-- All text enclosed in angled brackets are known as HTML element tags. There are usually, but not always, starting and closing element "tags", each representing a HTML element.
+The <html> element is known as the root element of a HTML page. All other elements are encased within it. -->
+<html>
+  <!-- The <head> element contains meta information about the HTML page, information that is not rendered or displayed by the browser -->
+  <head>
+    <!-- The <title> element specifies a title for the HTML page (which is shown in the browser's title bar or in the page's tab) and is the default name given to a bookmark of a webpage. -->
+    <title>Basics</title>
+    <!-- The <style> element contains information relating to the layout and style of the webpage. The syntax within a <style> tag is referred to as CSS - Cascading Style Sheets. -->
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: sans-serif;
+      }
+
+      #header {
+        text-align: center;
+      }
+
+      #container {
+        background-color: pink;
+        margin: 40px auto;
+        max-width: 800px;
+        padding: 38px 31px;
+      }
+
+      #output-div {
+        background-color: lightgrey;
+        justify-content: center;
+
+        padding: 20px;
+        width: 100%;
+      }
+
+      .selections {
+        justify-content: center;
+        display: flex;
+      }
+
+      #rock,
+      #paper,
+      #scissors {
+        background: none;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        font-size: 50px;
+        transition: 80ms;
+      }
+
+      .selections > *:hover {
+        transform: scale(1.3);
+      }
+
+      .results {
+        justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: center;
+        align-items: center;
+        font-size: 40px;
+        font-family: sans-serif;
+      }
+      .result {
+        font-size: 25px;
+      }
+
+      .rounds {
+        font-size: 20px;
+      }
+
+      .past-results-player {
+        float: left;
+        padding: 38px 300px;
+        opacity: 0.5;
+        font-size: 50px;
+      }
+
+      .past-results-computer {
+        float: right;
+        padding: 38px 300px;
+        opacity: 0.5;
+        font-size: 50px;
+      }
+      /* 
+      @media (max-width: 500px) {
+        #container {
+          margin: 0 auto;
+          padding: 5px;
+          display: block;
+          max-width: 200px;
+        }
+      } */
+    </style>
+  </head>
+
+  <!-- The <body> element defines the document's body, and is a container for all the visible contents that will be rendered by the browser.  -->
+  <body>
+    <!-- The <h1> element defines a large heading. There are 6 pre-set header elements, <h1> to <h6> -->
+    <h1 id="header">ye boi 🚀</h1>
+    <!-- <div class="past-results-player">0</div>
+    <div class="past-results-computer">0</div> -->
+    <!-- The <div> tag defines a division or a section in an HTML document, and is commonly use as a "container" for nested HTML elements. -->
+    <div id="container">
+      <div class="results">
+        <div>You <span class="result player">0</span></div>
+        <div class="rounds">
+          Rounds left:<span class="rounds-left">10</span>
+        </div>
+        <div>Computer <span class="result computer">0</span></div>
+      </div>
+      <!-- The self-closing <br /> tag represents a line break - a line's worth of spacing before dispalying the next element. -->
+      <br />
+      <!-- The <button> tag represents.. you guessed it! a button. -->
+      <div class="selections">
+        <div class="selection"><button id="rock">✊</button></div>
+        <div class="selection"><button id="paper">✋</button></div>
+        <div class="selection"><button id="scissors">✌️</button></div>
+      </div>
+      <p>Results: <p id="result-visual"></p></p>
+      <p id="computer-choice-result">Computer waiting for user to pick..</p>
+    </div>
+
+    <!-- Everything below this is incorporating JavaScript programming logic into the webpage. -->
+    <!-- The script tag encloses JavaScript syntax for the browser to interpret programtically -->
+    <!-- The following line imports all code written in the script.js file -->
+    <script src="rps.js"></script>
+  </body>
+</html>
